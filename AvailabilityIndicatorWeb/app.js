@@ -1,6 +1,5 @@
 var express = require('express');
 var routes = require('./routes');
-var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
 var express_handlebars = require('express3-handlebars');
@@ -8,7 +7,7 @@ var express_handlebars = require('express3-handlebars');
 var app = express();
 
 // all environments
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 8081);
 
 var hbs = express_handlebars.create({
 	defaultLayout: 'main',  //path to main layout file
@@ -36,8 +35,6 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-//app.get('/', routes.index);
-//app.get('/users', user.list);
 require(__dirname + '/app/indicator/indicator_routes')(app);
 
 

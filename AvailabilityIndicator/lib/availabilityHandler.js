@@ -12,7 +12,6 @@ var checkSwitchStatus = function(callback){
 	});
 } ;
 
-
 var changeTheIndicatorStatus = function(status,callback){
 	if(status == 'HIGH'){
 		boneScript.digitalWrite('P8_13', boneScript.HIGH);

@@ -30,16 +30,16 @@ var indicatorRoutes = function(app){
 			}
 		};
 
-		var req = http.request(options, function(res) {
+		//Call the beaglebone fix in the location through the IP, and get the status.
+		var requestToServer = http.request(options, function(res) {
 			res.setEncoding('utf8');
 			res.on('data', function (statusData) {
-				console.log("body: " + statusData);
 				response.write(statusData);
 				response.end();
 			});
 		});
 
-		req.end();
+		requestToServer.end();
 
 	});
 };

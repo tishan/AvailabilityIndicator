@@ -13,7 +13,7 @@ $(document).ready(function () {
 		self.washRoomOne = ko.observable('undefined');
 		self.getIndicatorStatus = function(){
 			getIndicatorStatus();
-		}
+		};
 
 	}
 
@@ -26,6 +26,7 @@ $(document).ready(function () {
 		} , 10000);
 	}
 
+	//Update the status in the web interface
 	function getIndicatorStatus() {
 		$.get('/getIndicatorStatus' , function (data , status) {
 			console.log("Set status");
