@@ -13,11 +13,11 @@ var server = http.createServer(function(request, response) {
 
 		availabilityHandler.checkSwitchStatus(function(status){
 			availabilityHandler.changeTheIndicatorStatus(status,function(){
-				var mode = 'Not Available'
 				if(status == 'HIGH'){
-					mode = 'Available';
+					response.write('Available');
+				} else {
+					response.write('Not Available');
 				}
-				response.write(mode);
 				response.end();
 			});
 		});
